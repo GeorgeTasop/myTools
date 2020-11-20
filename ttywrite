@@ -1,0 +1,12 @@
+#!/bin/bash
+
+device='/dev/ttyACM0'
+if [[ $1 -eq '1' ]]
+then
+	device='/dev/ttyACM1'
+fi
+# Read commands from user, send them to device $1
+while read cmd
+do
+   echo "$cmd" 
+done > $device
